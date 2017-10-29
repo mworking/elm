@@ -21,7 +21,7 @@ const autoOpenBrowser = !!config.dev.autoOpenBrowser
 // https://github.com/chimurai/http-proxy-middleware
 const proxyTable = config.dev.proxyTable
 
-const app = express()
+const app = express();
 
 var appData = require('../data.json');
 var seller = appData.seller;
@@ -30,28 +30,28 @@ var ratings = appData.ratings;
 
 var apiRoutes = express.Router();
 
-apiRoutes.get('/seller',function (req, res) {
+apiRoutes.get('/seller', function (req, res) {
   res.json({
     errno: 0,
-    data:seller
+    data: seller
   });
 });
 
-apiRoutes.get('/goods',function (req,res) {
-  res,json({
-    errno:0,
-    data:goods
+apiRoutes.get('/goods', function (req, res) {
+  res.json({
+    errno: 0,
+    data: goods
   });
 });
 
-apiRoutes.get('/ratings',function (req,res) {
-  res,json({
-    errno:0,
-    data:ratings
+apiRoutes.get('/ratings', function (req, res) {
+  res.json({
+    errno: 0,
+    data: ratings
   });
 });
 
-app.use('./api',apiRoutes);
+app.use('/api',apiRoutes);
 
 const compiler = webpack(webpackConfig)
 

@@ -1,10 +1,11 @@
 <template>
   <div id="app">
+
     <!--3. 组件使用-->
     <TitleHeader></TitleHeader>
-    <!-- 使用 router-link 组件来导航. -->
-    <!-- 通过传入 `to` 属性指定链接. -->
-    <!-- <router-link> 默认会被渲染成一个 `<a>` 标签 -->
+     <!--使用 router-link 组件来导航.-->
+     <!--通过传入 `to` 属性指定链接.-->
+     <!--<router-link> 默认会被渲染成一个 `<a>` 标签-->
     <!--注意：<router-link>会被渲染成一个 <a> 标签，打开源码可以看到-->
     <div class="tab-item">
       <router-link to="/goods">goods</router-link>
@@ -32,6 +33,7 @@
     },
     created(){
       this.$http.get('/api/seller').then((response)=>{
+          console.log(response);
           response = response.body; //get json object
           if(response.errno === ERR_OK){
               this.seller = response.data;
