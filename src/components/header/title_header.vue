@@ -1,8 +1,21 @@
 <template>
   <div class="header">
       <div class="content-wrapper">
+        <!--左侧头像区域-->
         <div class="avatar">
           <img v-bind:src="seller.avatar" width="64px" height="64px">
+        </div>
+        <!--右侧内容区域-->
+        <div class="content">
+           <div class="title">
+             <span class="brand"></span>
+             <span class="name"> {{ seller.name }} </span>
+           </div>
+          <div class="description">
+            {{ seller.description }} / {{ seller.deliveryTime }}
+          </div>
+
+
         </div>
       </div>
       <div class="bulletin-wrapper"></div>
