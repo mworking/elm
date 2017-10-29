@@ -17,12 +17,28 @@
   </div>
 </template>
 
-<script>
+<script type="text/ecmascript-6">
   //  1. 引入组件
   import TitleHeader from './components/header/title_header.vue'
 
+  const  ERR_OK = 0;  //状态碼， 返回ok
+
   export default {
     name: 'app',
+    data() {
+      return {
+        seller:{}
+      }
+    },
+    created(){
+      this.$http.get('/api/seller').then((response)=>{
+          response = response.body; //get json object
+          if(response.errno === ERR_OK){
+              this.seller = response.data;
+              console.log(this.seller);
+          }
+      });
+    },
     // 2 组件注册
     components: {TitleHeader}
   }

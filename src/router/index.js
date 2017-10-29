@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
 import Goods from '@/components/goods/goods'
 import Ratings from '@/components/ratings/ratings'
 import Seller from '@/components/seller/seller'
@@ -11,8 +10,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Hello',
-      component: HelloWorld
+      name: 'Goods',
+      component: Goods
     },
     {
       path: '/goods',
