@@ -20,6 +20,10 @@
           </div>
 
         </div>
+        <div v-if="seller.supports" class="support-count">
+            <span class="count">{{ seller.supports.length }} 个</span>
+            <i class="icon-keyboard_arrow_right"> > </i>
+        </div>
       </div>
       <div class="bulletin-wrapper"></div>
   </div>
@@ -43,8 +47,10 @@
 
   .header{
       color: #fff;
-      background: #000;
+      background: #999;
       .content-wrapper{
+          /*因为对support-count 进行绝对定位， 父布局需要采用相对定位*/
+          position: relative;
         /*上 右 下 左*/
         padding: 24px 12px 18px 24px;
         /*小技巧: avatar 和 content 是贴合在一起的，就是上下文字有距离，所以
@@ -118,9 +124,27 @@
               }
               .text{
                   line-height: 12px;
-                  font-size: 12px;
+                  font-size: 10px;
               }
           }
+        }
+        .support-count{
+            position: absolute;
+            right: 12px;
+            bottom: 18px;
+            padding: 0 8px;
+            height: 24px;
+            line-height: 24px;
+            border-radius: 14px;
+            background: rgba(0,0,0,0.2);
+            text-align: center;
+            .count{
+                vertical-align: top;
+                font-size: 10px;
+            }
+            .icon-keyboard_arrow_right{
+                font-size: 10px;
+            }
         }
       }
   }
