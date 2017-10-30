@@ -36,6 +36,16 @@
       </div>
       <!--当detailsShow为false时，会转化为 style="display: none;" f12就能看见-->
       <div class="detail" v-show="detailsShow">
+          <div class="detial-wrapper clearfix">
+              <div class="detail-main">
+                  <p>{{ seller.bulletin }}</p>
+                  <p>{{ seller.bulletin }}</p>
+                  <p>{{ seller.bulletin }}</p>
+              </div>
+          </div>
+          <div class="detail-close">
+              <i class="icon-close"> x </i>
+          </div>
       </div>
   </div>
 </template>
@@ -224,6 +234,22 @@
           height: 100%;
           overflow: auto;
           background: rgba(7,17,27,0.8);
+          .detial-wrapper{
+              min-height: 100%;
+              .detail-main{
+                  margin-top: 64px;
+                  padding-bottom: 64px;
+              }
+          }
+          .detail-close{
+              position: relative;
+              width: 32px;
+              height: 32px;
+              margin: -64px auto 0 auto;
+              /*清除浮动*/
+              clear: both;
+              font-size: 32px;
+          }
       }
   }
 
