@@ -7,7 +7,7 @@
      <!--通过传入 `to` 属性指定链接.-->
      <!--<router-link> 默认会被渲染成一个 `<a>` 标签-->
     <!--注意：<router-link>会被渲染成一个 <a> 标签，打开源码可以看到-->
-    <div class="tab-item">
+    <div class="tab">
       <router-link to="/goods">goods</router-link>
       <router-link to="/ratings">ratings</router-link>
       <router-link to="/seller">seller</router-link>
@@ -47,7 +47,7 @@
 </script>
 
 <style lang="scss" scoped>
-  .tab-item{
+  .tab{
     display: flex;
     width: 100%;
     /*height == line-height 内容垂直居中*/
@@ -58,6 +58,11 @@
       flex: 1;
       /*文字水平居中*/
       text-align: center;
+      color: rgb(77,85,93);
+    }
+    /*点击之后变颜色*/
+    a:hover{
+      color: rgb(240, 20, 20);
     }
   }
 </style>

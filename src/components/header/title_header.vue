@@ -60,12 +60,22 @@
           .title{
             margin:  2px 0 8px 0;
             .brand{
-              width: 30px;
-              height: 18px;
-              /*因为span是个行内元素，所以指定宽高是不生效的，需要设置为
+                /*还是无法对齐，设置对齐方式*/
+                vertical-align: top;
+                width: 30px;
+                height: 18px;
+                /*因为span是个行内元素，所以指定宽高是不生效的，需要设置为
                 行内块元素*/
-              display: inline-block;
-
+                display: inline-block;
+                background-image: url("./brand@2x.png");
+                background-size: 30px 18px;
+                background-repeat:no-repeat;
+            }
+            .name{
+                margin-left: 6px;
+                font-size: 16px;
+                line-height: 18px;
+                font-weight: bold;
             }
           }
         }
