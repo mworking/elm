@@ -30,6 +30,7 @@
           <span class="bulletin-text">{{ seller.bulletin }}</span>
           <i class="icon-keyboard_arrow_right"> > </i>
       </div>
+      <!--这个头部的背景-->
       <div class="backgroud">
           <img v-bind:src="seller.avatar" width="100%" height="100%">
       </div>
@@ -54,6 +55,8 @@
 
   .header{
       position: relative;
+      /*filter:blur 会使阴影溢出到下面，所以这儿隐藏了*/
+      overflow: hidden;
       color: #fff;
       /*做个透明层，模糊的效果*/
       background: rgba(7,17,27,0.5);
@@ -171,7 +174,7 @@
           .bulletin-title{
               display: inline-block;
               vertical-align: top;
-              margin-top: 7px;
+              margin-top: 8px;
               width: 22px;
               height: 12px;
               background-image: url("./bulletin@2x.png");
