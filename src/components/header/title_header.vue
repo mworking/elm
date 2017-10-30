@@ -25,7 +25,11 @@
             <i class="icon-keyboard_arrow_right"> > </i>
         </div>
       </div>
-      <div class="bulletin-wrapper"></div>
+      <div class="bulletin-wrapper">
+          <span class="bulletin-title"></span>
+          <span class="bulletin-text">{{ seller.bulletin }}</span>
+          <i class="icon-keyboard_arrow_right"> > </i>
+      </div>
   </div>
 </template>
 
@@ -146,6 +150,40 @@
                 font-size: 10px;
             }
         }
+      }
+      .bulletin-wrapper{
+          position: relative;
+          height: 28px;
+          line-height: 28px;
+          /*父元素设置font-size 消除空白间隙，可以看到间隙没了，图片和文字靠在一起*/
+          /*font-size: 0;*/
+          padding: 0 22px 0 12px;
+          background: rgba(7,17,27,0.2);
+          /*设置单行显示， 多余部分隐藏， 多出内容 变为点点点*/
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          .bulletin-title{
+              display: inline-block;
+              vertical-align: top;
+              margin-top: 7px;
+              width: 22px;
+              height: 12px;
+              background-image: url("./bulletin@2x.png");
+              background-size: 22px 12px;
+              background-repeat: no-repeat;
+          }
+          .bulletin-text{
+              vertical-align: top;
+              margin: 0 4px;
+              font-size: 10px;
+          }
+          .icon-keyboard_arrow_right{
+             /*这儿使用绝对定位， 前提是先给父元素，设置为相对定位*/
+              position: absolute;
+              font-size: 10px;
+              right: 12px;
+          }
       }
   }
 
