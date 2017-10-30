@@ -15,7 +15,7 @@
             {{ seller.description }} / {{ seller.deliveryTime }}
           </div>
           <div v-if="seller.supports" class="support">
-              <span class="icon"></span>
+              <span class="icon" v-bind:class = "classMap[seller.supports[0].type]"></span>
               <span class="text"> {{ seller.supports[0].description }} </span>
           </div>
 
@@ -32,7 +32,10 @@
      seller:{
        type: Object
      }
-   }
+   },
+     created(){
+         this.classMap = ['decrease','discount','special','invoice','gurantee'];
+     }
  }
 </script>
 
@@ -51,7 +54,12 @@
         font-size: 0;
         /*avatar content 这个和头像是在一个行内的，所以设置为display: inline-block*/
         .avatar {
-          display: inline-block;
+            /*右边文字与第一行顶部对齐*/
+            vertical-align: top;
+            display: inline-block;
+            img{
+                border-radius: 2px;
+            }
         }
         .content{
           display: inline-block;
@@ -77,6 +85,36 @@
                 line-height: 18px;
                 font-weight: bold;
             }
+          }
+          .description{
+              margin-bottom: 10px;
+              line-height: 12px;
+              font-size: 12px;
+          }
+          .support{
+              .icon{
+                  display: inline-block;
+                  width: 12px;
+                  height: 12px;
+                  margin-right: 4px;
+                  background-size: 12px 12px;
+                  background-repeat: no-repeat;
+                  .decrease{
+                        background-image: url("./decrease_1@2x.png");
+                  }
+                  .discount{
+                      background-image: url('./discount_1@2x.png');
+                  }
+                  .gurantee{
+                      background-image: url('./guarantee_1@2x.png');
+                  }
+                  .invoice{
+                      background-image: url('./invoice_1@2x.png');
+                  }
+                  .special{
+                      background-image: url('./special_1@2x.png');
+                  }
+              }
           }
         }
       }
