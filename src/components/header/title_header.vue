@@ -55,6 +55,8 @@
   .header{
       position: relative;
       color: #fff;
+      /*做个透明层，模糊的效果*/
+      background: rgba(7,17,27,0.5);
       .content-wrapper{
           /*因为对support-count 进行绝对定位， 父布局需要采用相对定位*/
           position: relative;
@@ -195,6 +197,7 @@
           width: 100%;
           height: 100%;
           z-index: -1;
+          filter:blur(10px);
       }
   }
 
