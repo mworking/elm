@@ -1,6 +1,7 @@
 <template>
     <div class="star" v-bind:class="starType">
-        <span v-for="itemClass in itemClasses" class="start-item" v-bind:class="itemClass" track-by="$index"></span>
+        <span v-for="itemClass in itemClasses" class="star-item" v-bind:class="itemClass" track-by="$index">
+        </span>
     </div>
 </template>
 
@@ -26,7 +27,7 @@
             },
             itemClasses(){
                 let result = [];
-                let score = Math.floor(this.csore * 2) /2 ;
+                let score = Math.floor(this.score * 2) /2 ;
                 let hasDecimal = score % 1 !== 0; //是否有小数
                 let integer = Math.floor(score);
                 for(let i =0; i<integer; i++){
@@ -38,6 +39,7 @@
                 while (result.length < LENGTH){
                     result.push(CLS_OFF);
                 }
+                console.log(result)
                 return result;
             }
         }
@@ -59,15 +61,15 @@
             height: 20px;
             margin-right: 22px;
             background-size: 20px 20px;
-            .on{
-                background-image: url("star48_on@2x.png");
-            }
-            .half{
-                background-image: url("star48_half@2x.png");
-            }
-            .off{
-                background-image: url("star48_off@2x.png");
-            }
+        }
+        .on{
+            background-image: url("star48_on@2x.png");
+        }
+        .half{
+            background-image: url("star48_half@2x.png");
+        }
+        .off{
+            background-image: url("star48_off@2x.png");
         }
     },
     .star-48:last-child{
@@ -79,15 +81,15 @@
             height: 20px;
             margin-right: 6px;
             background-size: 15px 15px;
-            .on{
-                background-image: url("star36_on@2x.png");
-            }
-            .half{
-                background-image: url("star36_half@2x.png");
-            }
-            .off{
-                background-image: url("star36_off@2x.png");
-            }
+        }
+        .on{
+            background-image: url("star36_on@2x.png");
+        }
+        .half{
+            background-image: url("star36_half@2x.png");
+        }
+        .off{
+            background-image: url("star36_off@2x.png");
         }
     },
     .star-36:last-child{
@@ -99,15 +101,15 @@
             height: 10px;
             margin-right: 3px;
             background-size: 10px 10px;
-            .on{
-                background-image: url("star24_on@2x.png");
-            }
-            .half{
-                background-image: url("star24_half@2x.png");
-            }
-            .off{
-                background-image: url("star24_off@2x.png");
-            }
+        }
+        .on{
+            background-image: url("star24_on@2x.png");
+        }
+        .half{
+            background-image: url("star24_half@2x.png");
+        }
+        .off{
+            background-image: url("star24_off@2x.png");
         }
     }
     .star-24:last-child{
