@@ -1,3 +1,4 @@
+<script src="../star/sadf.js"></script>
 <template>
   <div class="header">
       <div class="content-wrapper">
@@ -38,9 +39,8 @@
       <div class="detail" v-show="detailsShow">
           <div class="detial-wrapper clearfix">
               <div class="detail-main">
-                  <p>{{ seller.bulletin }}</p>
-                  <p>{{ seller.bulletin }}</p>
-                  <p>{{ seller.bulletin }}</p>
+                  <h1 class="name">{{ seller.name }}</h1>
+                  <star v-bind:size="48" v-bind:score="seller.score"></star>
               </div>
           </div>
           <div class="detail-close">
@@ -51,6 +51,9 @@
 </template>
 
 <script>
+
+    import star from '../star/star.vue'
+
     export default{
         //props 获取父组件传递的内容
         props: {
@@ -70,6 +73,9 @@
         },
         created(){
             this.classMap = ['decrease', 'discount', 'special', 'invoice', 'gurantee'];
+        },
+        components:{
+            star
         }
     }
 </script>
@@ -235,10 +241,18 @@
           overflow: auto;
           background: rgba(7,17,27,0.8);
           .detial-wrapper{
+              width: 100%;
               min-height: 100%;
               .detail-main{
                   margin-top: 64px;
                   padding-bottom: 64px;
+                  .name{
+                      line-height: 16px;
+                      /*父布局detial-wrapper 需要设置宽度，否则不会居中，也是，不知道父布局的宽度，怎么居中*/
+                      text-align: center;
+                      font-size: 16px;
+                      font-weight: 700;
+                  }
               }
           }
           .detail-close{
