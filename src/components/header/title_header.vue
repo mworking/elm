@@ -99,21 +99,25 @@
                   margin-right: 4px;
                   background-size: 12px 12px;
                   background-repeat: no-repeat;
-                  .decrease{
-                        background-image: url("./decrease_1@2x.png");
-                  }
-                  .discount{
-                      background-image: url('./discount_1@2x.png');
-                  }
-                  .gurantee{
-                      background-image: url('./guarantee_1@2x.png');
-                  }
-                  .invoice{
-                      background-image: url('./invoice_1@2x.png');
-                  }
-                  .special{
-                      background-image: url('./special_1@2x.png');
-                  }
+              }
+              .decrease{
+                  background-image: url("./decrease_1@2x.png");
+              }
+              .discount{
+                  background-image: url('./discount_1@2x.png');
+              }
+              .gurantee{
+                  background-image: url('./guarantee_1@2x.png');
+              }
+              .invoice{
+                  background-image: url('./invoice_1@2x.png');
+              }
+              .special{
+                  background-image: url('./special_1@2x.png');
+              }
+              .text{
+                  line-height: 12px;
+                  font-size: 12px;
               }
           }
         }
