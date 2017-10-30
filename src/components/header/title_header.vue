@@ -20,12 +20,12 @@
           </div>
 
         </div>
-        <div v-if="seller.supports" class="support-count">
+        <div v-if="seller.supports" class="support-count" v-on:click="showDetail">
             <span class="count">{{ seller.supports.length }} 个</span>
             <i class="icon-keyboard_arrow_right"> > </i>
         </div>
       </div>
-      <div class="bulletin-wrapper">
+      <div class="bulletin-wrapper" v-on:click="showDetail">
           <span class="bulletin-title"></span>
           <span class="bulletin-text">{{ seller.bulletin }}</span>
           <i class="icon-keyboard_arrow_right"> > </i>
@@ -34,21 +34,34 @@
       <div class="backgroud">
           <img v-bind:src="seller.avatar" width="100%" height="100%">
       </div>
+      <!--当detailsShow为false时，会转化为 style="display: none;" f12就能看见-->
+      <div class="detail" v-show="detailsShow">
+      </div>
   </div>
 </template>
 
 <script>
- export default{
-//props 获取父组件传递的内容
-   props:{
-     seller:{
-       type: Object
-     }
-   },
-     created(){
-         this.classMap = ['decrease','discount','special','invoice','gurantee'];
-     }
- }
+    export default{
+        //props 获取父组件传递的内容
+        props: {
+            seller: {
+                type: Object
+            }
+        },
+        data(){
+            return {
+                detailsShow: false
+            }
+        },
+        methods:{
+          showDetail(){
+              this.detailsShow = true;
+          }
+        },
+        created(){
+            this.classMap = ['decrease', 'discount', 'special', 'invoice', 'gurantee'];
+        }
+    }
 </script>
 
 <style lang="scss" scoped>
@@ -201,6 +214,16 @@
           height: 100%;
           z-index: -1;
           filter:blur(10px);
+      }
+      .detail{
+          position: fixed;
+          z-index: 100;
+          top:0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          overflow: auto;
+          background: rgba(7,17,27,0.8);
       }
   }
 
