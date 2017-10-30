@@ -30,6 +30,9 @@
           <span class="bulletin-text">{{ seller.bulletin }}</span>
           <i class="icon-keyboard_arrow_right"> > </i>
       </div>
+      <div class="backgroud">
+          <img v-bind:src="seller.avatar" width="100%" height="100%">
+      </div>
   </div>
 </template>
 
@@ -50,8 +53,8 @@
 <style lang="scss" scoped>
 
   .header{
+      position: relative;
       color: #fff;
-      background: #999;
       .content-wrapper{
           /*因为对support-count 进行绝对定位， 父布局需要采用相对定位*/
           position: relative;
@@ -184,6 +187,14 @@
               font-size: 10px;
               right: 12px;
           }
+      }
+      .backgroud{
+          position: absolute;
+          top:0;
+          left:0;
+          width: 100%;
+          height: 100%;
+          z-index: -1;
       }
   }
 
