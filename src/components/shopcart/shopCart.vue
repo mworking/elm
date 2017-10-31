@@ -6,7 +6,7 @@
             <div class="logo">
               <i class="icon-shopping_cart"></i>
             </div>
-            <div></div>
+            <div class="num">{{totalCount}}</div>
           </div>
           <div class="price">￥{{totalPrice}}</div>
           <div class="desc">另需配送费￥{{deliveryPrice}}</div>
@@ -27,7 +27,12 @@
         selectFoods:{
           type: Array,
           default(){
-            return [];
+            return [
+              {
+                price: 20,
+                count: 1
+              }
+            ];
           }
         },
         deliveryPrice: {
@@ -98,6 +103,23 @@
               line-height: 44px;
               color: #80858a;
             }
+          }
+          .num{
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 24px;
+            /*如下代码使 垂直居中*/
+            height: 16px;
+            line-height: 16px;
+            /*水平居中*/
+            text-align: center;
+            border-radius: 16px;
+            font-size: 9px;
+            font-weight: 700;
+            color: #fff;
+            background: rgb(240,20,20);
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
           }
         }
         .price{
