@@ -4,7 +4,7 @@
         <div class="content-left">
           <div class="logo-wrapper">
             <div class="logo">
-              <span class="icon-shopping_cart"></span>
+              <i class="icon-shopping_cart"></i>
             </div>
             <div class="price"></div>
             <div class="desc"></div>
@@ -28,9 +28,52 @@
     bottom: 0;
     z-index: 50;
     width: 100%;
-    background: #000;
     height: 48px;
+    .content{
+      display: flex;
+      background: #141d27;
+      font-size:0;
+      .content-left{
+        flex: 1;
+        .logo-wrapper{
+          display: inline-block;
+          position: relative;
+          top:-10px;
+          margin: 0 12px;
+          padding: 6px;
+          width: 56px;
+          height: 56px;
+          /*这儿注意*/
+          box-sizing: border-box;
+          vertical-align: top;
+          border-radius: 50%;
+          background: #141d27;
+          .logo{
+            width: 100%;
+            height: 100%;
+            /*icon-shopping_cart 是把图片变成字体的东西，设置居中，在父布局中设*/
+            text-align: center;
+            border-radius: 50%;
+            background: #2b343c;
+            .icon-shopping_cart{
+              font-size: 24px;
+              line-height: 44px;
+              color: #80858a;
+            }
+          }
+        }
+        .price{
+          display: inline-block;
+        }
+        .desc{
+          display: inline-block;
+        }
+      }
+      .content-right{
+        flex: 0 0 105px;
+        width: 105px;
+      }
+    }
   }
-
 </style>
 
