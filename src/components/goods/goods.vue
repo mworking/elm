@@ -27,8 +27,8 @@
                   <span>好评率{{food.rating}}%</span>
                 </div>
                 <div class="price">
-                  <span>￥{{food.price}}</span>
-                  <span v-show="food.oldPrice">￥{{food.oldprice}}</span>
+                  <span class="now">￥{{food.price}}</span>
+                  <span class="old" v-show="food.oldPrice">￥{{food.oldprice}}</span>
                 </div>
               </div>
             </li>
@@ -162,6 +162,20 @@
            .extra{
              .count{
                margin-right: 12px;
+             }
+           }
+           .price{
+             font-weight: 700;
+             line-height: 24px;
+             .now{
+               margin-right: 18px;
+               font-size: 14px;
+               color: rgb(240,20,20);
+             }
+             .old{
+               text-decoration: line-through;
+               font-size: 10px;
+               color: rgb(147,153,159);
              }
            }
          }
