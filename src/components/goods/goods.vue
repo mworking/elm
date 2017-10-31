@@ -79,6 +79,7 @@
         if(response.errno === ERR_OK){
           this.goods = response.data;
           //进行一些DOM相关的操作的时候，我们需要保证这个DOM已经渲染了，写在这儿
+          //虽然vue是数据变了， dom就变了，但真正变化，是在这个函数后
           this.$nextTick(() => {
             this._initScroll();
             this._calculateHeight();
