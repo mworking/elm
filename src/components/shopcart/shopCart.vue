@@ -6,6 +6,7 @@
             <div class="logo">
               <i class="icon-shopping_cart"></i>
             </div>
+            <div></div>
           </div>
           <div class="price">￥{{totalPrice}}</div>
           <div class="desc">另需配送费￥{{deliveryPrice}}</div>
@@ -45,6 +46,13 @@
             total += food.price * food.count;
           });
           return total;
+        },
+        totalCount(){
+          let count = 0;
+          this.selectFoods.forEach((food)=>{
+            count += food.count;
+          });
+          return count;
         }
       }
     }
