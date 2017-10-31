@@ -93,7 +93,9 @@
         if(!event._constructed){
           return;
         }
-        console.log(index)
+        let foodList = this.$refs.foodsWrapper.getElementsByClassName('food-list-hook');
+        let el = foodList[index];
+        this.foodsScroll.scrollToElement(el,300);
       },
       _initScroll(){
         this.menuScroll = new BScroll(this.$refs.menuWrapper,{
@@ -107,7 +109,7 @@
         });
       },
       _calculateHeight(){
-        let foodList = this.$refs.foodsWrapper.getElementsByTagName('food-list-hook');
+        let foodList = this.$refs.foodsWrapper.getElementsByClassName('food-list-hook');
         let height = 0;
         this.listHeight.push(height);
         for(let i = 0; i< foodList.length;i++){
