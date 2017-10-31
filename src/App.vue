@@ -8,9 +8,9 @@
      <!--<router-link> 默认会被渲染成一个 `<a>` 标签-->
     <!--注意：<router-link>会被渲染成一个 <a> 标签，打开源码可以看到-->
     <div class="tab">
-      <router-link to="/goods">goods</router-link>
-      <router-link to="/ratings">ratings</router-link>
-      <router-link to="/seller">seller</router-link>
+      <router-link to="/goods">商品</router-link>
+      <router-link to="/ratings">评论</router-link>
+      <router-link to="/seller">商家</router-link>
     </div>
     <!-- 路由出口 -->
     <!-- 路由匹配到的组件将渲染在这里 -->
