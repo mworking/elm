@@ -49,9 +49,9 @@
                       <div class="line"></div>
                   </div>
                   <ul v-if="seller.supports" class="supports">
-                      <li class="support-item" v-for="item in seller.supports">
-                          <span class="icon" v-bind:class="classMap[seller.supports[0].type]"></span>
-                          <span class="text">{{ seller.supports[0].description }}</span>
+                      <li class="support-item" v-for="item,index in seller.supports">
+                          <span class="icon" v-bind:class="classMap[seller.supports[index].type]"></span>
+                          <span class="text">{{ seller.supports[index].description }}</span>
                       </li>
                   </ul>
                   <div class="title">
