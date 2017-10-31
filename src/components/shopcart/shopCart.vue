@@ -7,10 +7,14 @@
               <i class="icon-shopping_cart"></i>
             </div>
           </div>
-          <div class="price">$20</div>
-          <div class="desc">另需配送费￥{{ deliveryPrice }}</div>
+          <div class="price">￥0</div>
+          <div class="desc">另需配送费￥{{deliveryPrice}}</div>
         </div>
-        <div class="content-right"></div>
+        <div class="content-right">
+          <div class="pay">
+            ￥{{minPrice}}起送
+          </div>
+        </div>
       </div>
     </div>
 </template>
@@ -97,6 +101,14 @@
       .content-right{
         flex: 0 0 105px;
         width: 105px;
+        .pay{
+          height: 48px;
+          line-height: 48px;
+          text-align: center;
+          font-size: 12px;
+          color:rgba(255,255,255,0.4);
+          font-weight: 700;
+        }
       }
     }
   }

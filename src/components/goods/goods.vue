@@ -37,7 +37,7 @@
         </li>
       </ul>
     </div>
-    <shopcart v-bind:devivery-price="seller.deliveryPrice" v-bind:min-price="seller.minPrice"></shopcart>
+    <shopcart v-bind:delivery-price="seller.deliveryPrice" v-bind:min-price="seller.minPrice"></shopcart>
   </div>
 </template>
 
