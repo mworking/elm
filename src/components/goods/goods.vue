@@ -78,6 +78,7 @@
         response = response.body;
         if(response.errno === ERR_OK){
           this.goods = response.data;
+          //进行一些DOM相关的操作的时候，我们需要保证这个DOM已经渲染了，写在这儿
           this.$nextTick(() => {
             this._initScroll();
             this._calculateHeight();
