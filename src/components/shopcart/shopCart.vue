@@ -13,7 +13,7 @@
         </div>
         <div class="content-right">
           <div class="pay">
-            ￥{{minPrice}}起送
+            {{payDesc}}
           </div>
         </div>
       </div>
@@ -29,7 +29,7 @@
           default(){
             return [
               {
-                price: 20,
+                price: 10,
                 count: 1
               }
             ];
@@ -58,6 +58,17 @@
             count += food.count;
           });
           return count;
+        },
+        payDesc(){
+          // 这儿的 this.totalPrice 不可以写成 this.totalPrice() 会报错
+          if(this.totalPrice === 0){
+            return `￥${this.minPrice} 元起送`;
+          }else if(this.totalPrice < this.minPrice){
+            let diff = this.minPrice - this.totalPrice;
+            return `还差￥${diff}元起送`;
+          }else{
+            return '去结算';
+          }
         }
       }
     }
