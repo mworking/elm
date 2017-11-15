@@ -12,7 +12,7 @@
           <div class="desc">另需配送费￥{{deliveryPrice}}</div>
         </div>
         <div class="content-right">
-          <div class="pay">
+          <div class="pay" v-bind:class="payClass">
             {{payDesc}}
           </div>
         </div>
@@ -29,7 +29,7 @@
           default(){
             return [
               {
-                price: 10,
+                price: 30,
                 count: 1
               }
             ];
@@ -68,6 +68,13 @@
             return `还差￥${diff}元起送`;
           }else{
             return '去结算';
+          }
+        },
+        payClass(){
+          if(this.totalPrice < this.minPrice){
+            return 'not-enough';
+          }else{
+            return 'enough';
           }
         }
       }
@@ -168,6 +175,13 @@
           color:rgba(255,255,255,0.4);
           font-weight: 700;
           background: #2b333b;
+        }
+        .not-enough{
+          background: #2b333b;
+        }
+        .enough{
+          background: #00b43c;
+          color: #fff;
         }
       }
     }
