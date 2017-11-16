@@ -1,6 +1,6 @@
 <template>
   <div class="cartcontrol">
-    <div class="cart-decrease icon-remove_circle_outline" v-show="food.count>0"></div>
+    <div class="cart-decrease icon-remove_circle_outline" v-on:click="decreaseCart" v-show="food.count>0"></div>
     <div class="cart-count" v-show="food.count>0">{{food.count}}</div>
     <div class="cart-add icon-add_circle" v-on:click="addCart"></div>
   </div>
@@ -34,6 +34,14 @@
         }else{
           this.food.count++;
         }
+      },
+      decreaseCart(event){
+        if(!event._constructed){
+          return;
+        }
+        if(this.food.count){
+          this.food.count--;
+        }
       }
     }
   };
@@ -55,6 +63,13 @@
     }
     .cart-count{
       display: inline-block;
+      vertical-align: top;
+      width: 12px;
+      padding-top: 6px;
+      line-height: 24px;
+      text-align: center;
+      font-size: 10px;
+      color: rbg(147,153,159);
     }
     .cart-add{
       display: inline-block;
