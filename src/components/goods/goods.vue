@@ -110,6 +110,8 @@
           click: true
         });
         this.foodsScroll = new BScroll(this.$refs.foodsWrapper,{
+          //为了让列表中的按钮可以点击
+          click:true,
           probeType: 3
         })
         this.foodsScroll.on('scroll',(pos) => {

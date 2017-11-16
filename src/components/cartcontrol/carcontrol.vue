@@ -8,6 +8,8 @@
 
 <script type="text/ecmascript-6">
 
+  import Vue from 'vue';
+
   export default {
     props: {
       food:{
@@ -18,8 +20,20 @@
 //      console.log(this.food);
     },
     methods:{
-      addCart:{
-
+      addCart(event){
+//      为了防止， H5 切换到 pc的时候，点击，一下子触发很多次
+        if(!event._constructed){
+          return;
+        }
+        console.log("click");
+        if(!this.food.count){
+//          这种方式无效，应为我们 food 中没有count 这个字段，所以无效
+//           如果我们新增一个字段，并且希望dom来刷新的话， 需要使用vue.set 来做
+//          this.food.count = 1;
+          Vue.set(this.food,'count',1);
+        }else{
+          this.food.count++;
+        }
       }
     }
   };
