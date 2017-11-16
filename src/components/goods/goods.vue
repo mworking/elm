@@ -31,6 +31,9 @@
                   <span class="now">￥{{food.price}}</span>
                   <span class="old" v-show="food.oldPrice">￥{{food.oldprice}}</span>
                 </div>
+                <div class="cartcontrol-wrapper">
+                  <carcontrol v-bind:food="food"></carcontrol>
+                </div>
               </div>
             </li>
           </ul>
@@ -44,7 +47,8 @@
 <script type="text/ecmascript-6">
 
   import BScroll from 'better-scroll';
-  import shopcart from '../shopcart/shopCart.vue'
+  import shopcart from '../shopcart/shopCart.vue';
+  import carcontrol from '../cartcontrol/carcontrol.vue';
 
   const ERR_OK = 0;
 
@@ -124,7 +128,8 @@
       }
     },
     components:{
-      shopcart
+      shopcart,
+      carcontrol
     }
   }
 </script>
@@ -213,6 +218,7 @@
            margin-right: 10px;
          }
          .content{
+           /*position: relative;*/
            flex:1;
            .name{
              margin: 2px 0 8px 0;
@@ -221,7 +227,7 @@
              font-size: 14px;
              color: rgb(7, 17, 27);
            }
-           .desc,.extra{
+           .desc, .extra{
              line-height: 10px;
              font-size: 10px;
              color: rgb(147,153,159);
@@ -248,6 +254,12 @@
                font-size: 10px;
                color: rgb(147,153,159);
              }
+           }
+           .cartcontrol-wrapper{
+             /*这儿先不设置了，这儿要有效果，需要将父布局，.content设置属性 position： relative*/
+             /*position: absolute;*/
+             /*bottom: 12px;*/
+             /*right: 0px;*/
            }
          }
        }
