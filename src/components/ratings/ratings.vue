@@ -27,8 +27,23 @@
       </div>
       <!--绘制中间的阴影线条-->
       <split></split>
+      <!--绘制全部，满意，不满意 3个tab-->
       <ratingselect @select="selectRating" @toggle="toggleContent"
           :selectType="selectType" :onlyContent="onlyContent" :ratings="ratings"></ratingselect>
+      <div class="rating-wrapper">
+        <ul>
+          <li v-for="rating in ratings" v-show="needShow(rating.rateType,rating.text)"
+            class="rating-item">
+            <div class="avatar">
+              <img src="28" height="28" :src="rating.avatar">
+            </div>
+            <div class="content">
+              <h1 class="name">{{rating.username}}</h1>
+
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
