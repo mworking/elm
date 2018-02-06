@@ -13,6 +13,7 @@
     const CLS_OFF = "off";
 
     export default {
+      // 通过父组件  <star :size="36" :score="seller.serviceScore"></star> 向子组件传值， 可以这么想，子组件 props 中申明了这些内容，父组件调用传值
         props:{
             size:{
                 type:Number
