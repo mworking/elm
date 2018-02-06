@@ -1,8 +1,20 @@
 <template>
     <div class="ratingselect">
       <div class="rating-type border-1px">
-        <span @click="">
-
+        <!--全部-->
+        <span @click="select(2,$event)" class="block positive" :class="{'active':selectType===2}">
+          {{desc.all}}
+          <span class="count">{{ratings.length}}</span>
+        </span>
+        <!--满意-->
+        <span @click="select(2,$event)" class="block positive" :class="{'active':selectType===2}">
+          {{desc.positive}}
+          <span class="count">{{positives.length}}</span>
+        </span>
+        <!--不满意-->
+        <span @click="select(2,$event)" class="block positive" :class="{'active':selectType===2}">
+          {{desc.negative}}
+          <span class="count">{{negatives.length}}</span>
         </span>
       </div>
     </div>
